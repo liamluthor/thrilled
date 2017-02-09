@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.spatialthreat.thrilled.level.tile.Tile"/>
+<fullyQualifiedTypeName name="com.spatialthreat.thrilled.entity.Entity"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="com.spatialthreat.thrilled.graphics.Screen"/>
+<fullyQualifiedTypeName name="com.spatialthreat.thrilled.entity.mob.Cyclops"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>

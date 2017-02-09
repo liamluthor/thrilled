@@ -1,0 +1,9 @@
+package com.spatialthreat.thrilled.level.tile;
+
+public class fountain extends Tile {
+	
+	public fountain () {
+		
+	}
+
+}

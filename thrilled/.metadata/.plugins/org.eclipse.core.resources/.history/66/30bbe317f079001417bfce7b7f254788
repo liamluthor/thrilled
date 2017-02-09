@@ -1,0 +1,5 @@
+package com.spatialthreat.thrilled.entity.mob;
+
+public class Player {
+
+}

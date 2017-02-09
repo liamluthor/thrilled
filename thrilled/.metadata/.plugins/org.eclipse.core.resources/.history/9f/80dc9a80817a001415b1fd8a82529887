@@ -1,0 +1,5 @@
+package com.spatialthreat.thrilled.level.tile;
+
+public class wallbr extends Tile {
+
+}

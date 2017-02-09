@@ -1,0 +1,32 @@
+package com.spatialthreat.thrilled.entity.mob;
+
+import com.spatialthreat.thrilled.graphics.Screen;
+import com.spatialthreat.thrilled.graphics.Sprite;
+
+
+public class Cyclops extends Mob {
+	
+	
+	private Sprite sprite;
+	private int anim = 0;
+	private boolean walking = false;
+	
+	public Cyclops(int x, int y) {
+		sprite = Sprite.cyclops;
+		this.x = x << 4;
+		this.y = y << 4;
+	}
+	
+	
+	
+	
+	public void update() {
+	
+	}
+	
+	public void render(Screen screen) {
+	screen.renderPlayer(x, y, sprite);
+		
+	}
+
+}

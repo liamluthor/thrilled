@@ -1,0 +1,89 @@
+package com.spatialthreat.thrilled.level;
+
+import com.spatialthreat.thrilled.graphics.Screen;
+import com.spatialthreat.thrilled.level.tile.Tile;
+
+public class Level {
+
+	protected int width, height;
+	protected int[] tilesInt;
+	public int[] tiles;
+	protected int grasscol 			= 0xff00ff00;
+	protected int wallcol  			= 0xff000000;
+	protected int gravecol 			= 0xffff0000;
+	protected int watercol 			= 0xff0000ff;
+	protected int woodfloorcol  	= 0xffb79027;
+	protected int curbupcol 		= 0xFF33cccc;
+	protected int curbdowncol 		= 0xFF134a4a;
+	protected int curbleftcol 		= 0xFF801d8c;
+	protected int curbrightcol 		= 0xFF7b4b81;
+	protected int curbcornertlcol 	= 0xFF434f74;
+    protected int curbcornertrcol 	= 0xFFe040d3;
+	protected int curbcornerblcol 	= 0xFFcbe040;
+	protected int curbcornerbrcol 	= 0xFFe08840; 
+	
+	
+	public Level(int width, int height) {
+		this.width = width;
+		this.height = height;
+		tilesInt = new int[width * height];
+		generateLevel();
+		
+	}
+	
+	public Level(String path) {
+		loadLevel(path);
+		generateLevel();
+	}
+
+	protected void generateLevel() {
+	}
+	
+	protected void loadLevel(String path) {
+	}
+	
+	
+	
+	public void update() {	
+	}
+	
+	private void time() {
+	}
+	
+	public void render(int xScroll, int yScroll, Screen screen) {
+		screen.setOffset(xScroll, yScroll);
+		int x0 = xScroll >> 4;
+		int x1 = (xScroll  + screen.width + 16) >> 4;
+		int y0 = yScroll >> 4;
+		int y1 = (yScroll + screen.height + 16) >> 4;
+		
+		for (int y = y0; y < y1; y++) {
+			for (int x = x0; x < x1; x++) {
+				getTile(x, y).render(x, y, screen);			
+			}
+		}
+		
+	}
+	
+	public Tile getTile(int x, int y) {
+		if (x < 0 || y < 0|| x >= width || y >= height) return Tile.voidTile;
+		if (tiles[x + y * width] == grasscol) return Tile.grass;
+		if (tiles[x + y * width] == wallcol) return Tile.wall;
+		if (tiles[x + y * width] == gravecol) return Tile.grave;
+		if (tiles[x + y * width] == watercol) return Tile.water;
+		if (tiles[x + y * width] == woodfloorcol) return Tile.woodfloor;
+		if (tiles[x + y * width] == curbupcol) return Tile.curbUp;
+		if (tiles[x + y * width] == curbleftcol) return Tile.curbLeft;
+		if (tiles[x + y * width] == curbrightcol) return Tile.curbRight;
+		if (tiles[x + y * width] == curbdowncol) return Tile.curbDown;
+		
+		if (tiles[x + y * width] == curbcornertlcol) return Tile.curbCornerTL;
+		if (tiles[x + y * width] == curbcornertrcol) return Tile.curbCornerTR;
+		if (tiles[x + y * width] == curbcornerblcol) return Tile.curbCornerBL;
+		if (tiles[x + y * width] == curbcornerbrcol) return Tile.curbCornerBR;
+
+		return Tile.voidTile;
+		
+	}
+
+}

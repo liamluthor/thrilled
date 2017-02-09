@@ -1,0 +1,5 @@
+package com.spatialthreat.thrilled.input;
+
+public class Keyboard {
+
+}
